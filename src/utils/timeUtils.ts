@@ -1,4 +1,4 @@
-import { parse, isAfter, isBefore } from "date-fns";
+import { parse, isAfter } from "date-fns";
 import { PrayerTimeData } from "../api/request";
 
 export interface PrayerTime {
