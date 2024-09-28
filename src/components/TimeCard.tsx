@@ -15,10 +15,41 @@ const TimeCard: FC<TimeCardProps> = ({ data }) => {
       console.error("Error formatting time:", error);
     }
   };
+
+  const formatDayName = (day: string) => {
+    switch (day) {
+      case "Monday":
+        day = "Isnin";
+        break;
+      case "Tuesday":
+        day = "Selasa";
+        break;
+      case "Wednesday":
+        day = "Rabu";
+        break;
+      case "Thursday":
+        day = "Khamis";
+        break;
+      case "Friday":
+        day = "Jumaat";
+        break;
+      case "Saturday":
+        day = "Sabtu";
+        break;
+      case "Sunday":
+        day = "Ahad";
+        break;
+
+      default:
+        day = day;
+        break;
+    }
+    return day;
+  };
   return (
     <div>
       <h2 className="py-4">
-        {data.day}, {data.date}
+        {formatDayName(data.day)}, {data.date}
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
         <div className="rounded-lg p-4 bg-blue-50 text-lg">
